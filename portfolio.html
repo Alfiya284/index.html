@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <meta name="description" content="Portfolio of Alfiya Hawaldar, Web Developer skilled in HTML, CSS, JavaScript, PHP, and SQL. Explore my projects, skills, and contact me for collaboration.">
+  <meta name="keywords" content="Alfiya Hawaldar, Web Developer, HTML, CSS, JavaScript, PHP, SQL, Portfolio, Frontend Developer">
+  <meta name="author" content="Alfiya Hawaldar">
+  <link rel="preload" as="image" href="imgg.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+        nav {
+      background: linear-gradient(to right, #141e30, #243b55);
+      padding: 15px 40px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      border-bottom: 2px solid cyan;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav .logo span:first-child { color: orangered; }
+    nav .logo span:last-child { color: lightskyblue; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: cyan;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: orangered;
+      color: white;
+    }
+
+    .menu {
+      display: none;
+      font-size: 28px;
+      color: cyan;
+      cursor: pointer;
+    }
+
+    #menu { display: none; }
+
+    
+    .hero {
+      min-height: 100vh;
+      padding: 100px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: linear-gradient(135deg, #141e30, #243b55);
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+      animation: fadeUp 2s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 45px;
+      line-height: 1.3;
+      text-shadow: 2px 2px 6px black;
+    }
+
+    .hero-text h1 span { color: deeppink; }
+
+    .hero-text p {
+      font-size: 22px;
+      margin-top: 15px;
+      color: cyan;
+      animation: blink 2s infinite alternate;
+    }
+
+    .cta {
+      margin-top: 25px;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 12px 25px;
+      margin-right: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn1 { background: orangered; color: white; }
+    .btn1:hover { background: deeppink; }
+
+    .btn2 { border: 2px solid cyan; color: cyan; }
+    .btn2:hover { background: cyan; color: black; }
+
+    .hero img {
+      flex: 1 1 300px;
+      max-width: 350px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0px 6px 50px cyan;
+      animation: floatImage 4s ease-in-out infinite;
+    }
+
+    
+    #about {
+      background: #1b2735;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    #about h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: cyan;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .about-content img {
+      flex: 1 1 250px;
+      max-width: 250px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 6px 20px cyan;
+      animation: floatImage 4s ease-in-out infinite;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      animation: fadeUp 2s ease;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: justify;
+      color: #e0e0e0;
+    }
+
+    
+    #skills {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #232526, #414345);
+      text-align: center;
+    }
+
+    #skills h2 {
+      font-size: 32px;
+      margin-bottom: 50px;
+      color: cyan;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .skills {
+      position: relative;
+      background: white;
+      color: black;
+      padding: 25px;
+      width: 220px;
+      border-radius: 10px;
+      margin: 15px;
+      transition: all 0.3s ease;
+      animation: fadeUp 2s ease;
+    }
+
+    .skills i {
+      font-size: 40px;
+      color: orangered;
+      margin-bottom: 10px;
+    }
+
+    .skills h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: rgb(90, 165, 190);
+    }
+
+    .skills:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+      background: cyan;
+      color: black;
+    }
+
+    .skills::after {
+      content: attr(title);
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: cyan;
+      color: black;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    .skills:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    
+    #contact {
+      padding: 80px 20px;
+      background: #141e30;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: cyan;
+    }
+
+    .contactme input,
+    .contactme textarea {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px;
+      margin: 10px auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      display: block;
+    }
+
+    .contactme button {
+      padding: 12px 25px;
+      background-color: lightblue;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .contactme button:hover {
+      transform: scale(1.1);
+      background-color: cyan;
+    }
+
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeUp { from {transform:translateY(40px); opacity:0;} to {transform:translateY(0); opacity:1;} }
+    @keyframes floatImage { 0% {transform: translateY(0);} 50% {transform: translateY(-20px);} 100% {transform: translateY(0);} }
+    @keyframes blink { 0% {opacity:1;} 50% {opacity:0.6;} 100% {opacity:1;} }
+
+    @media (max-width: 1024px) {
+      nav ul { gap: 15px; }
+      .hero-text h1 { font-size: 40px; }
+      .hero-text p { font-size: 20px; }
+      .about-content { flex-direction: column; text-align: center; }
+      .about-text p { text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      .menu { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #141e30;
+        text-align: center;
+        padding: 15px 0;
+      }
+      #menu:checked + ul { display: flex; }
+      nav ul li { margin: 10px 0; }
+      .hero { flex-direction: column; text-align: center; }
+      .hero img { max-width: 250px; }
+      .skills { width: 80%; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 32px; }
+      .hero-text p { font-size: 18px; }
+      .skills { width: 90%; }
+      .about-text p { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo"><span>Port</span><span>Folio</span></div>
+    <label for="menu" class="menu"><i class="fa-solid fa-bars"></i></label>
+    <input type="checkbox" id="menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Alfiya Hawaldar</span></h1>
+      <p>A passionate Web Developer specialized in creating modern, responsive, and user-friendly websites.</p>
+      <div class="cta">
+        <a href="#skills" class="btn1">View My Skills</a>
+        <a href="#contact" class="btn2">Hire Me</a>
+      </div>
+    </div>
+    <img src="imgg.jpg" alt="Profile Image">
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="imgg.jpg" alt="My Photo">
+      <div class="about-text">
+        <p>
+          I am <strong>Alfiya Hawaldar</strong>, a dedicated Web Developer and BCA graduate passionate about building
+          modern, efficient, and visually appealing web solutions. <br><br>
+          With experience in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>PHP</b>, and <b>SQL</b>, I create responsive,
+          user-friendly applications that provide seamless digital experiences. <br><br>
+          I love solving problems, learning new frameworks, and continuously improving my design and development skills
+          to stay aligned with the latest web trends.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skills" title="Structure and content of web pages using HTML5.">
+        <i class="fa-brands fa-html5"></i>
+        <h3>HTML</h3>
+        <p>I build semantic and structured web pages using HTML5.</p>
+      </div>
+
+      <div class="skills" title="Styling and layout design with CSS3 and animations.">
+        <i class="fa-brands fa-css3-alt"></i>
+        <h3>CSS</h3>
+        <p>I design responsive layouts and animations using modern CSS.</p>
+      </div>
+
+      <div class="skills" title="Interactive behavior and dynamic features with JavaScript.">
+        <i class="fa-brands fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>I create interactive web applications using JS features.</p>
+      </div>
+
+      <div class="skills" title="Server-side scripting and backend development with PHP.">
+        <i class="fa-brands fa-php"></i>
+        <h3>PHP</h3>
+        <p>I develop backend logic and dynamic pages using PHP.</p>
+      </div>
+
+      <div class="skills" title="Database management and queries using MySQL.">
+        <i class="fa-solid fa-database"></i>
+        <h3>SQL</h3>
+        <p>I design and manage relational databases efficiently.</p>
+      </div>
+
+      <div class="skills" title="Version control and collaboration with Git & GitHub.">
+        <i class="fa-brands fa-github"></i>
+        <h3>Git & GitHub</h3>
+        <p>I manage code versions and collaborate on projects using Git tools.</p>
+      </div>
+
+      <div class="skills" title="Responsive and mobile-first layouts using Bootstrap.">
+        <i class="fa-brands fa-bootstrap"></i>
+        <h3>Bootstrap</h3>
+        <p>I create mobile-friendly and responsive designs quickly.</p>
+      </div>
+
+      <div class="skills" title="Basic photo editing and UI design with Canva & Figma.">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>Canva / Figma</h3>
+        <p>I design clean and modern interfaces using creative design tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contactme">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
+
+
